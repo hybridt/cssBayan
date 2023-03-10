@@ -43,14 +43,10 @@ table {
 }
 
 /*-----------------------------------------------------------------*/
-
-html {
-
-}
-
 body {
   margin: 0;
   font-family: 'Segoe UI', 'Tahoma', sans-serif;
+  background-color: #faebd7;
 }
 
 .container {
@@ -138,13 +134,25 @@ h1 {
   } */
 }
 
-@media (min-width: 819px) {
+@media (min-width: 820px) {
   .container {
     max-width: 60%;
+  }
+
+  h1 {
+    font-size: 3.0rem;
+  }
+
+  .accordion__title {
+    font-size: 2.0rem;
   }
 }
 
 @media (min-width: 1024px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+
   .accordion__icon {
     opacity: 0;
     transition: all 0.3s;
@@ -158,12 +166,24 @@ h1 {
     color: #000;
   }
 
+  .accordion:hover .accordion__icon {
+    transform: rotate(135deg);
+  }
+
   .accordion:hover .accordion__content {
     max-height: 30vh;
   }
 
   .accordion:hover .accordion__image {
     transform: scale(1);
+  }
+
+  .accordion:active {
+    opacity: 0.5;
+  }
+
+  .accordion:active .accordion__title {
+    color: rgba(0, 0, 255, 0.7);
   }
 }
 
