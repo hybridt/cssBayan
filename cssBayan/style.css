@@ -87,9 +87,31 @@ h1 {
 }
 
 .accordion__content {
-  display: none;
+  max-height: 0;
 }
 
 .accordion__image {
   width: 100%;
+  transform: scale(0);
+  transition: all 0.5s;
+}
+
+.accordion__toggle {
+  display: none;
+}
+
+.accordion__toggle:checked + label .accordion__title {
+  color: #000;
+}
+
+.accordion__toggle:checked + label .accordion__icon {
+  transform: rotate(135deg);
+}
+
+.accordion__toggle:checked + label .accordion__content {
+  max-height: none;
+}
+
+.accordion__toggle:checked + label .accordion__image {
+  transform: scale(1);
 }
