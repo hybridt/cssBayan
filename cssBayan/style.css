@@ -54,7 +54,7 @@ body {
 }
 
 .container {
-  width: 90%;
+  max-width: 90%;
   margin: 0 auto;
 }
 
@@ -76,6 +76,7 @@ h1 {
   color: rgba(0, 0, 255, 0.7);
   font-size: 1.5rem;
   font-weight: bold;
+  transition: all 0.5s;
 }
 
 .accordion__icon {
@@ -88,12 +89,23 @@ h1 {
 
 .accordion__content {
   max-height: 0;
+  transition: all 0.3s;
+  text-align: center;
 }
 
 .accordion__image {
-  width: 100%;
+  max-width: 100%;
+  max-height: inherit;
   transform: scale(0);
-  transition: all 0.5s;
+  transition: transform 0.3s;
+}
+
+.accordion__image_first {
+  background-image: url('assets/img/memes/feelsgoodman.png');
+}
+
+.accordion__image_second{
+  background-image: url('assets/img/memes/oGNC2V9ralE.jpg');
 }
 
 .accordion__toggle {
@@ -109,9 +121,54 @@ h1 {
 }
 
 .accordion__toggle:checked + label .accordion__content {
-  max-height: none;
+  max-height: 30vh;
 }
 
 .accordion__toggle:checked + label .accordion__image {
   transform: scale(1);
+}
+
+@media (min-width: 550px) {
+  .container {
+    max-width: 80%;
+  }
+
+  /* .accordion__toggle:checked + label .accordion__content {
+    max-height: 40vh;
+  } */
+}
+
+@media (min-width: 819px) {
+  .container {
+    max-width: 60%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .accordion__icon {
+    opacity: 0;
+    transition: all 0.3s;
+  }
+
+  .accordions:hover .accordion__icon {
+    opacity: 1;
+  }
+
+  .accordions:hover .accordion__title {
+    color: #000;
+  }
+
+  .accordion:hover .accordion__content {
+    max-height: 30vh;
+  }
+
+  .accordion:hover .accordion__image {
+    transform: scale(1);
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    max-width: 40%;
+  }
 }
