@@ -65,7 +65,7 @@ body {
   display: inline-block;
   width: 6.4rem;
   height: 6.4rem;
-  background-image: url('assets/img/accordion_1fa97.png');
+  background-image: url('assets/img/bayan-icon.png');
   background-size: cover;
   vertical-align: text-bottom;
 }
@@ -79,6 +79,7 @@ h1 {
 .accordions {
   display: flex;
   flex-direction: column;
+  padding-bottom: 1.6rem;
   gap: 1.6rem;
 }
 
