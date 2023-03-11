@@ -109,17 +109,17 @@ h1 {
   cursor: pointer;
 }
 
-.accordion:nth-child(1n) {
+.accordion:nth-child(4n - 3) {
   border-color: var(--border-lightviolet);
   background-color: var(--accordion-lightviolet);
 }
 
-.accordion:nth-child(2n) {
+.accordion:nth-child(4n - 2) {
   border-color: var(--border-lightyellow);
   background-color: var(--accordion-lightyellow);
 }
 
-.accordion:nth-child(3n) {
+.accordion:nth-child(4n - 1) {
   border-color: var(--border-lightred);
   background-color: var(--accordion-lightred);
 }
@@ -246,15 +246,15 @@ h1 {
     transform: rotate(135deg);
   }
 
-  .accordion:nth-child(1n):hover {
+  .accordion:nth-child(4n - 3):hover {
     box-shadow: var(--shadow-size) var(--border-lightviolet);
   }
 
-  .accordion:nth-child(2n):hover {
+  .accordion:nth-child(4n - 2):hover {
     box-shadow: var(--shadow-size) var(--border-lightyellow);
   }
   
-  .accordion:nth-child(3n):hover {
+  .accordion:nth-child(4n - 1):hover {
     box-shadow: var(--shadow-size) var(--border-lightred);
   }
   
