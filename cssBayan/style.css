@@ -1,0 +1,290 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*-----------------------------------------------------------------*/
+:root {
+  --bg-light: rgba(255,255,255,0.8);
+  --bg-lightblue: rgba(63,94,251,0.6);
+  --accordion-lightviolet: rgb(229, 229, 255);
+  --accordion-lightyellow: rgb(255, 241, 229);
+  --accordion-lightred: rgb(255, 229, 235);
+  --accordion-lightblue: rgb(229, 246, 255);
+  --border-lightviolet: rgb(138, 138, 255);
+  --border-lightyellow: rgb(255, 192, 138);
+  --border-lightred: rgb(255, 138, 161);
+  --border-lightblue: rgb(138, 216, 255);
+  --title-blue: rgba(0, 0, 255, 0.7);
+  --shadow-color: rgba(0, 0, 0, 0.3);
+
+  --shadow-size: 0 0 1rem 0.1rem;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'Tahoma', sans-serif;
+  background: linear-gradient(145deg, var(--bg-light) 0%, var(--bg-lightblue) 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.bayan-icon {
+  display: inline-block;
+  width: 6.4rem;
+  height: 6.4rem;
+  background-image: url('assets/img/bayan-icon.png');
+  background-size: cover;
+  vertical-align: text-bottom;
+}
+
+h1 {
+  margin: 1.6rem 0;
+  font-size: 4.0rem;
+  font-weight: bold;
+}
+
+.accordions {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1.6rem;
+  gap: 1.6rem;
+}
+
+.accordion {
+  padding: 1.6rem 0;
+  box-shadow: var(--shadow-size) var(--shadow-color);
+  border-radius: 0.5rem;
+  border-left: 0.5rem solid;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.accordion:nth-child(4n - 3) {
+  border-color: var(--border-lightviolet);
+  background-color: var(--accordion-lightviolet);
+}
+
+.accordion:nth-child(4n - 2) {
+  border-color: var(--border-lightyellow);
+  background-color: var(--accordion-lightyellow);
+}
+
+.accordion:nth-child(4n - 1) {
+  border-color: var(--border-lightred);
+  background-color: var(--accordion-lightred);
+}
+
+.accordion:nth-child(4n) {
+  border-color: var(--border-lightblue);
+  background-color: var(--accordion-lightblue);
+}
+
+.accordion__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.8rem;
+}
+
+.accordion__title {
+  color: var(--title-blue);
+  font-size: 2.4rem;
+  font-weight: bold;
+  transition: all 0.5s;
+}
+
+.accordion__icon {
+  flex: 0 0 auto;
+  width: 3.2rem;
+  height: 3.2rem;
+  background-image: url('assets/img/accordion-icon.svg');
+  background-size: cover;
+  transition: transform 1.0s;
+}
+
+.accordion__content {
+  max-height: 0;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.accordion__image {
+  max-width: 100%;
+  max-height: inherit;
+  transform: scale(0);
+  transition: transform 0.3s;
+}
+
+.accordion__image_first {
+  background-image: url('assets/img/memes/feelsgoodman.png');
+}
+
+.accordion__image_second{
+  background-image: url('assets/img/memes/oGNC2V9ralE.jpg');
+}
+
+.accordion__toggle {
+  display: none;
+}
+
+.accordion__label {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.accordion__toggle:checked + label .accordion__title {
+  color: #000;
+}
+
+.accordion__toggle:checked + label .accordion__icon {
+  transform: rotate(135deg);
+}
+
+.accordion__toggle:checked + label .accordion__content {
+  max-height: 40vh;
+  padding-top: 1.6rem;
+}
+
+.accordion__toggle:checked + label .accordion__image {
+  transform: scale(1);
+}
+
+@media (min-width: 550px) {
+  .container {
+    max-width: 80%;
+  }
+
+  .accordion__toggle:checked + label .accordion__content {
+    max-height: 40vh;
+  }
+}
+
+@media (min-width: 820px) {
+  .container {
+    max-width: 60%;
+  }
+
+  h1 {
+    font-size: 4.8rem;
+  }
+
+  .accordion__title {
+    font-size: 3.2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 5.6rem
+  }
+
+  .accordion__icon {
+    opacity: 0;
+    transition: all 0.3s;
+  }
+
+  .accordions:hover .accordion__icon {
+    opacity: 1;
+  }
+
+  .accordions:hover .accordion__title {
+    color: #000;
+  }
+
+  .accordion:hover .accordion__icon {
+    transform: rotate(135deg);
+  }
+
+  .accordion:nth-child(4n - 3):hover {
+    box-shadow: var(--shadow-size) var(--border-lightviolet);
+  }
+
+  .accordion:nth-child(4n - 2):hover {
+    box-shadow: var(--shadow-size) var(--border-lightyellow);
+  }
+  
+  .accordion:nth-child(4n - 1):hover {
+    box-shadow: var(--shadow-size) var(--border-lightred);
+  }
+  
+  .accordion:nth-child(4n):hover {
+    box-shadow: var(--shadow-size) var(--border-lightblue);
+  }
+
+  .accordion__toggle:checked + label .accordion__content {
+    max-height: 50vh;
+  }
+
+  .accordion:hover .accordion__content {
+    max-height: 30vh;
+  }
+
+  .accordion:hover .accordion__image {
+    transform: scale(1);
+  }
+
+  .accordion:active {
+    opacity: 0.5;
+  }
+
+  .accordion:active .accordion__title {
+    color: var(--title-blue);
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    max-width: 40%;
+  }
+}
